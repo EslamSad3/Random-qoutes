@@ -53,10 +53,10 @@ let qouteText = document.getElementById("qoute");
 let qouteAuthor = document.getElementById("author");
 
 let btn = document.getElementById("btn");
-
+let qouteIndexRandom;
+let qouteIndex;
 function getRandomQoute() {
-  let qouteIndexRandom = Math.random() * 10;
-  let qouteIndex;
+  qouteIndexRandom = Math.random() * 10;
   qouteIndex = Math.ceil(qouteIndexRandom) - 1;
   console.log(qouteIndex);
   qouteText.innerText = qoutes[qouteIndex].quote;
