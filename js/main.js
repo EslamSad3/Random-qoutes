@@ -51,12 +51,20 @@ let qoutes = [
 let qouteText = document.getElementById("qoute");
 let qouteAuthor = document.getElementById("author");
 let btn = document.getElementById("btn");
-let qouteIndexRandom;
-let qouteIndex;
+
+let previousIndex = -1;
 
 function getRandomQoute() {
-  qouteIndexRandom = Math.random() * 10;
-  qouteIndex = Math.ceil(qouteIndexRandom) - 1;
+  let qouteIndexRandom;
+  let qouteIndex;
+
+  do {
+    qouteIndexRandom = Math.random() * 10;
+    qouteIndex = Math.ceil(qouteIndexRandom) - 1;
+  } while (qouteIndex === previousIndex);
+
+  previousIndex = qouteIndex;
+
   qouteText.innerText = qoutes[qouteIndex].quote;
   qouteAuthor.innerText = qoutes[qouteIndex].author;
 }
