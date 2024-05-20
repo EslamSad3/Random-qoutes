@@ -48,17 +48,15 @@ let qoutes = [
     author: "― John Green, The Fault in Our Stars",
   },
 ];
-
 let qouteText = document.getElementById("qoute");
 let qouteAuthor = document.getElementById("author");
-
 let btn = document.getElementById("btn");
 let qouteIndexRandom;
 let qouteIndex;
+
 function getRandomQoute() {
   qouteIndexRandom = Math.random() * 10;
   qouteIndex = Math.ceil(qouteIndexRandom) - 1;
-  console.log(qouteIndex);
   qouteText.innerText = qoutes[qouteIndex].quote;
   qouteAuthor.innerText = qoutes[qouteIndex].author;
 }
